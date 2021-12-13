@@ -8,12 +8,27 @@ services:
     volumes:
       - ./:/app
     tty: true
-    ports:
-      - "8765:8765"
     depends_on:
       - db
 
   db:
     image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: my_app
+      MYSQL_USER: my_app
+      MYSQL_PASSWORD: secret
     ports:
       - "3306:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+    - PMA_ARBITRARY=1
+    - PMA_HOSTS=db
+    - PMA_USER=root
+    - PMA_PASSWORD=root
+    ports:
+      - "9898:80"
+    depends_on:
+      - db
