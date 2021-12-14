@@ -12,6 +12,7 @@ COPY --from=composer /usr/bin/composer /usr/bin/composer
 # update & install dev package
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libicu-dev \
+    git \
     && rm -rf /var/lib/apt/lists/*
 
 # add php module
