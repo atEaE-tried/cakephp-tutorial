@@ -9,6 +9,7 @@ A skeleton for creating applications with [CakePHP](https://cakephp.org) 3.x.
 
 1. PackageのInstall
    `composer install`を実行して、vendor packageをInstall. Container内で実行すると結構長い.  
+	 最後に`Set Folder Permissions ? (Default to Y) [Y,n]?`の選択肢が出るので、Yesを選択する.  
 2. サーバーの起動  
    `bin/cake server`を実行する.Portを指定したい場合は、`bin/cake server -p 8080`とする.(defaultは`8765`)  
 
